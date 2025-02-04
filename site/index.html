@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krew762 | Главная</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Прелоадер -->
+  <div class="preloader" id="preloader">
+    <h1>Krew762</h1>
+    <button class="open-portfolio" onclick="openPortfolio()">
+      <span>Открыть портфолио</span>
+      <div class="hover-effect"></div>
+    </button>
+  </div>
+  <!-- Эффект космоса -->
+  <div class="stars-container"></div>
+  <!-- Летающий космонавт -->
+  <img src="assets/Astro.png" alt="Astronaut" class="astronaut">
+  <!-- Основной контент -->
+  <div class="container" id="container">
+    <!-- Навигация -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i><span> Главная</span></a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i><span> Обо мне</span></a></li>
+        <li><a href="projects.html"><i class="fas fa-code"></i><span> Проекты</span></a></li>
+        <li><a href="skills.html"><i class="fas fa-cogs"></i><span> Навыки</span></a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i><span> Контакты</span></a></li>
+      </ul>
+    </nav>
+    <!-- Страница -->
+    <main class="content">
+      <section class="page">
+        <h1>Мои последние работы</h1>
+        <div class="cards-grid">
+          <div class="card">
+            <img src="assets/Astro.png" alt="Project 1" class="project-image">
+            <h3>Проект #1</h3>
+            <p>Тест 1</p>
+          </div>
+          <div class="card">
+            <img src="assets/Astro.png" alt="Project 2" class="project-image">
+            <h3>Проект #2</h3>
+            <p>Тест 2</p>
+          </div>
+          <div class="card">
+            <img src="assets/Astro.png" alt="Project 3" class="project-image">
+            <h3>Проект #3</h3>
+            <p>Тест 3</p>
+          </div>
+          <div class="card">
+            <img src="assets/Astro.png" alt="Project 4" class="project-image">
+            <h3>Проект #4</h3>
+            <p>Тест 4</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

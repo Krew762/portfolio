@@ -1,0 +1,248 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    background: #0A0A0A;
+    color: #E0E0E0;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  /* Прелоадер */
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0A0A0A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s;
+  }
+  
+  .preloader h1 {
+    color: #00FFFF;
+    font-size: 4em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  }
+  
+  .open-portfolio {
+    padding: 15px 40px;
+    background: transparent;
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .open-portfolio:hover {
+    background: #00FFFF22;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  
+  .hover-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(0, 255, 255, 0.3), 
+      transparent);
+    transition: left 0.6s;
+  }
+  
+  .open-portfolio:hover .hover-effect {
+    left: 100%;
+  }
+  
+  /* Анимация открытия портфолио */
+  @keyframes warp {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(5); opacity: 0.5; }
+    100% { transform: scale(0); opacity: 0; }
+  }
+  .warp-effect {
+    animation: warp 1.5s ease-out forwards;
+  }
+  
+ /* Эффект космоса */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; /* Позади всего контента */
+  }
+  
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1s infinite;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  /* Сайдбар */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 60px;
+    background: #121212;
+    padding: 20px;
+    transition: width 0.3s;
+    overflow: hidden;
+    z-index: 999;
+  }
+  
+  .sidebar:hover {
+    width: 200px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar li {
+    margin: 25px 0;
+  }
+  
+  .sidebar a {
+    color: #E0E0E0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  .sidebar i {
+    font-size: 24px;
+    margin-right: 15px;
+    width: 30px;
+  }
+  
+  .sidebar a span {
+    opacity: 0;
+    transition: opacity 0.3s 0.2s;
+  }
+  
+  .sidebar:hover a span {
+    opacity: 1;
+  }
+  
+  /* Основной контент */
+  .container {
+    padding-left: 40px;
+    margin-left: 60px; /* Отступ под сайдбар */
+    transition: margin-left 0.3s;
+  }
+  
+  .sidebar:hover + .container {
+    margin-left: 200px; /* Увеличиваем отступ при расширении сайдбара */
+  }
+  
+  /* Карточки */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
+    min-height: 200px;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card:hover {
+    z-index: 2;
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+    border-color: #00FFFF;
+  }
+  
+  .card img.project-image {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover img.project-image {
+    transform: scale(1.05);
+  }
+  
+  .card h3 {
+    color: #00FFFF;
+    margin-bottom: 15px;
+  }
+
+/* Космонавт */
+  .astronaut {
+    position: absolute;
+    width: 100px; /* Размер космонавта */
+    z-index: -1; /* Позади всего контента */
+    pointer-events: none; /* Отключаем взаимодействие */
+    transition: transform 0.1s ease-in-out; /* Плавное вращение */
+  }
+  
+  /* Анимация полета космонавта */
+  @keyframes fly {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    25% {
+      transform: translateY(-300px) translateX(400px);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-600px) translateX(800px);
+      opacity: 1;
+    }
+    75% {
+      transform: translateY(-900px) translateX(1200px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-1200px) translateX(1600px);
+      opacity: 0;
+    }
+  }
