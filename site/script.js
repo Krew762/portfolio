@@ -190,7 +190,7 @@ function loadLastProjectData() {
   // Если нет карточек проектов, выходим
   if (projectCards.length === 0) return;
 
-  // Находим первый проект (самый новый)
+  // Находим самый новый проект
   const lastProject = projectCards[0];
   const projectId = lastProject.getAttribute('data-project-id');
 
