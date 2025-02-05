@@ -18,22 +18,54 @@
     <!-- Навигация -->
     <nav class="sidebar">
       <ul>
-        <li><a href="index.html"><i class="fas fa-home"></i><span> Главная</span></a></li>
-        <li><a href="about.html"><i class="fas fa-user"></i><span> Обо мне</span></a></li>
-        <li><a href="projects.html" class="active"><i class="fas fa-code"></i><span> Проекты</span></a></li>
-        <li><a href="skills.html"><i class="fas fa-cogs"></i><span> Навыки</span></a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i><span> Контакты</span></a></li>
+        <li><a href="index.html" data-en="Home"><i class="fas fa-home"></i><span> Главная</span></a></li>
+        <li><a href="about.html" data-en="About"><i class="fas fa-user"></i><span> Обо мне</span></a></li>
+        <li><a href="projects.html" class="active" data-en="Projects"><i class="fas fa-code"></i><span> Проекты</span></a></li>
+        <li><a href="contact.html" data-en="Contacts"><i class="fas fa-envelope"></i><span> Контакты</span></a></li>
       </ul>
     </nav>
     <!-- Страница -->
     <main class="content">
       <section class="page">
-        <h2>Мои проекты</h2>
+        <div class="title-card">
+          <h2 data-en="My Projects">Мои проекты</h2>
+        </div>
         <div class="cards-grid">
-          <!-- Добавьте свои проекты -->
+          <!-- Первый проект (более новый) -->
+          <div class="card" data-project-id="portfolio-site" onclick="openProjectModal('portfolio-site')">
+            <img src="assets/PreloaderSite.jpg" alt="Создание сайта для портфолио" class="project-image">
+            <h3 data-en="Portfolio Website Creation">Создание сайта для портфолио</h3>
+            <p data-en="This website was created using HTML, CSS, and JavaScript. It includes animations, interactive elements, and responsive design.">
+              Разработка современного портфолио с анимацией и интерактивными элементами.
+            </p>
+          </div>
+          <!-- Второй проект (старый) -->
+          <div class="card" data-project-id="cs2-server" onclick="openProjectModal('cs2-server')">
+            <img src="assets/mcs.jpg" alt="Создание игрового сервера CS2" class="project-image">
+            <h3 data-en="CS2 Server Creation">Создание игрового сервера CS2</h3>
+            <p data-en="Setup and optimization of a Counter-Strike 2 game server.">
+              Настройка и оптимизация игрового сервера Counter-Strike 2.
+            </p>
+          </div>
         </div>
       </section>
     </main>
+  </div>
+  <!-- Модальное окно для проектов -->
+  <div class="modal" id="project-modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeProjectModal()">&times;</span>
+      <div class="project-slider">
+        <!-- Слайды загружаются динамически -->
+      </div>
+      <div class="project-description">
+        <!-- Описание загружается динамически -->
+      </div>
+      <div class="slider-controls">
+        <button onclick="changeSlide(-1)">❮</button>
+        <button onclick="changeSlide(1)">❯</button>
+      </div>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
